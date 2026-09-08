@@ -1,0 +1,129 @@
+{
+  "unanswerable_questions": [
+    {
+      "id": "U1",
+      "question": "What happens if I miss my exam because of a family wedding?",
+      "nearest_covered_topic": "Medical Leave (Clause 4.1) and Extraordinary Circumstances (Clause 5.3) cover illness, bereavement, natural disasters, and legal proceedings, but a wedding is not listed and is not analogous to any listed ground."
+    },
+    {
+      "id": "U2",
+      "question": "Can I bring a pet to my hostel room?",
+      "nearest_covered_topic": "Hostel policy covers guests, curfew, and cooking appliances, but never mentions animals or pets."
+    },
+    {
+      "id": "U3",
+      "question": "Is there a limit on how many days I can travel home during the semester without it affecting my attendance?",
+      "nearest_covered_topic": "Attendance calculation (Clause 2.2) and condonation (Clause 2.4) are covered, but personal travel days as a distinct category with a specific day-limit are not addressed."
+    },
+    {
+      "id": "U4",
+      "question": "Can I take up a part-time job outside campus while enrolled full-time?",
+      "nearest_covered_topic": "Course load and registration are covered in Section 7, but outside employment during the programme is never mentioned."
+    },
+    {
+      "id": "U5",
+      "question": "If two of my exams are scheduled at the same time, what is the process to get one rescheduled?",
+      "nearest_covered_topic": "Examination eligibility (Section 3) covers hall tickets and dues but says nothing about exam timetable clashes or rescheduling procedure."
+    },
+    {
+      "id": "U6",
+      "question": "Does the Institute provide any parking facility for students who bring their own car or bike?",
+      "nearest_covered_topic": "Not covered anywhere; hostel and campus facilities sections discuss common rooms and Wi-Fi but not vehicle parking."
+    },
+    {
+      "id": "U7",
+      "question": "Can I switch my branch or major after the first year if my grades are good enough?",
+      "nearest_covered_topic": "Credit transfer from external institutions (Section 18) is covered, but internal branch/major change is a different process not addressed."
+    },
+    {
+      "id": "U8",
+      "question": "Are online MOOC courses like Coursera or edX accepted for credit transfer?",
+      "nearest_covered_topic": "Clause 18.1 covers credit transfer from 'another recognized institution' with a transcript, which does not clearly include or exclude MOOC platforms - the regulations do not address this scenario."
+    },
+    {
+      "id": "U9",
+      "question": "What is the library fine for a book returned late?",
+      "nearest_covered_topic": "Library Fee is listed as a fee component (Clause F.1) but no late-return fine amount or policy is specified anywhere in the corpus."
+    },
+    {
+      "id": "U10",
+      "question": "Is there a printing or photocopying quota provided to students?",
+      "nearest_covered_topic": "Not covered; no section discusses printing, photocopying, or related facilities."
+    },
+    {
+      "id": "U11",
+      "question": "Can I request a single-occupancy hostel room by paying extra?",
+      "nearest_covered_topic": "Room allotment (Clause H1.2) describes a lottery system and retention requests, but paid upgrades to single occupancy are not mentioned."
+    },
+    {
+      "id": "U12",
+      "question": "What happens if I fail to show up for a scheduled viva voce for my undergraduate final year project?",
+      "nearest_covered_topic": "Viva/thesis evaluation is addressed only for postgraduate thesis submission (Section 14); undergraduate project vivas and non-appearance consequences are not covered."
+    },
+    {
+      "id": "U13",
+      "question": "Are religious festival holidays like Diwali or Eid counted as attendance exemptions if I travel home for them?",
+      "nearest_covered_topic": "Attendance exemptions (Clauses 2.3, 4.1) cover Institute-sanctioned activities and medical leave, not religious travel, which is a distinct and unaddressed scenario."
+    },
+    {
+      "id": "U14",
+      "question": "Can I pursue a second undergraduate degree simultaneously while completing my first one?",
+      "nearest_covered_topic": "Not covered; degree requirements (Section 16) address single-programme completion only."
+    },
+    {
+      "id": "U15",
+      "question": "What is the process if I want to donate or transfer my scholarship to another student in need?",
+      "nearest_covered_topic": "Clause 6.7 states scholarships are non-transferable, but this only forecloses the option - it does not describe any donation process because none exists, making a 'process' question unanswerable."
+    },
+    {
+      "id": "U16",
+      "question": "Does the Institute offer counseling or mental health support services, and how do I access them?",
+      "nearest_covered_topic": "The Institute Medical Officer is referenced for physical fitness assessments (Clause 4.6) and health emergencies (Clause H7.1), but psychological counseling services are never mentioned."
+    },
+    {
+      "id": "U17",
+      "question": "If I get married during my studies, does my hostel eligibility or fee structure change?",
+      "nearest_covered_topic": "Hostel eligibility (Section H1) discusses distance-from-home and year-of-study priority but has no provision addressing marital status."
+    },
+    {
+      "id": "U18",
+      "question": "Can I bring my own furniture or appliances into the hostel room, like a personal study desk or a mini-fridge?",
+      "nearest_covered_topic": "Clause H5.2 prohibits specific cooking appliances but does not address furniture or non-cooking appliances like refrigerators."
+    },
+    {
+      "id": "U19",
+      "question": "What happens to my CGPA and scholarship if I take a semester off for an internship that isn't through the Institute?",
+      "nearest_covered_topic": "LOA for internships (Clause 11.1) covers Institute-approved internships specifically; independently-arranged internships are not addressed, so the effect on CGPA/scholarship is unclear."
+    },
+    {
+      "id": "U20",
+      "question": "Is there a dress code for attending classes or entering the library?",
+      "nearest_covered_topic": "Not covered anywhere in the corpus - no clause addresses attire or dress code."
+    },
+    {
+      "id": "U21",
+      "question": "Can my parents access my grades directly by contacting the Institute, without my consent?",
+      "nearest_covered_topic": "Clause 17.2 requires the student's written consent for disclosure to third parties including parents/guardians of adult students - but it does not address what happens for students who are legal minors, which is a scenario the corpus doesn't resolve."
+    },
+    {
+      "id": "U22",
+      "question": "Is there a shuttle bus service between the hostel and the main academic campus if they are in different locations?",
+      "nearest_covered_topic": "Not covered; no transportation or shuttle service is mentioned anywhere in the corpus."
+    },
+    {
+      "id": "U23",
+      "question": "What is the procedure to report a case of ragging anonymously if I'm afraid of retaliation?",
+      "nearest_covered_topic": "Ragging penalties are covered under Clause 8.6 and H5.4, and confidentiality is mentioned for harassment grievances (Clause 13.3), but no anonymous reporting mechanism or hotline is described specifically for ragging."
+    },
+    {
+      "id": "U24",
+      "question": "Can I defer my admission by a year before even starting my first semester?",
+      "nearest_covered_topic": "Leave of Absence (Section 11) applies to currently enrolled students; pre-enrollment deferral is a distinct scenario not addressed."
+    },
+    {
+      "id": "U25",
+      "question": "If I'm on a Sports Scholarship and get injured and can't compete for a season, do I lose the scholarship?",
+      "nearest_covered_topic": "Clause 6.5 requires continued participation for renewal but does not address an injury-based exception or grace period, leaving the outcome undefined."
+    }
+  ]
+}

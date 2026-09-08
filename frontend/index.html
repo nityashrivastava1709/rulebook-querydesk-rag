@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Rulebook Query Desk</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #EDEAE1;
+    --paper-raised: #F6F4EC;
+    --ink: #22251F;
+    --ink-soft: #57584F;
+    --rule: #C7C0AC;
+    --navy: #2B3A55;
+    --green: #3F6C51;
+    --green-bg: #E4ECE3;
+    --amber: #93611E;
+    --amber-bg: #F1E7D4;
+    --red: #8B3A3A;
+    --red-bg: #F1E1DF;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Source Serif 4', Georgia, serif;
+    min-height: 100vh;
+  }
+
+  .desk {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 56px 24px 80px;
+  }
+
+  header {
+    border-bottom: 2px solid var(--ink);
+    padding-bottom: 18px;
+    margin-bottom: 36px;
+  }
+
+  header .kicker {
+    font-size: 13px;
+    color: var(--ink-soft);
+    letter-spacing: 0.02em;
+    margin: 0 0 6px;
+  }
+
+  header h1 {
+    font-size: 30px;
+    font-weight: 700;
+    margin: 0;
+    line-height: 1.15;
+  }
+
+  header p.sub {
+    margin: 10px 0 0;
+    color: var(--ink-soft);
+    font-size: 16px;
+    max-width: 54ch;
+  }
+
+  .ask-row {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+  }
+
+  #question {
+    flex: 1;
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 17px;
+    padding: 14px 16px;
+    border: 1.5px solid var(--ink);
+    background: var(--paper-raised);
+    color: var(--ink);
+    border-radius: 3px;
+  }
+
+  #question:focus {
+    outline: 3px solid var(--navy);
+    outline-offset: 1px;
+  }
+
+  #askBtn {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 0 24px;
+    background: var(--navy);
+    color: var(--paper-raised);
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+
+  #askBtn:hover { background: #1f2c42; }
+  #askBtn:disabled { background: var(--ink-soft); cursor: default; }
+  #askBtn:focus-visible { outline: 3px solid var(--navy); outline-offset: 2px; }
+
+  .hint {
+    font-size: 13px;
+    color: var(--ink-soft);
+    margin: 0 0 40px;
+  }
+
+  #results { min-height: 40px; }
+
+  .verdict-tag {
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 3px 11px;
+    border-radius: 999px;
+    margin-bottom: 14px;
+  }
+
+  .verdict-answered { background: var(--green-bg); color: var(--green); }
+  .verdict-conflict { background: var(--red-bg); color: var(--red); }
+  .verdict-not_covered { background: var(--amber-bg); color: var(--amber); }
+
+  .answer-block {
+    font-size: 18px;
+    line-height: 1.55;
+    margin: 0 0 24px;
+  }
+
+  .card {
+    background: var(--paper-raised);
+    border-left: 4px solid var(--rule);
+    padding: 14px 18px;
+    margin-bottom: 12px;
+  }
+
+  .card.answered { border-left-color: var(--green); }
+  .card.conflict { border-left-color: var(--red); }
+  .card.not_covered { border-left-color: var(--amber); }
+
+  .card .ref-line {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 6px;
+  }
+
+  .card .ref {
+    font-weight: 700;
+    font-size: 15px;
+  }
+
+  .card .score {
+    font-size: 13px;
+    color: var(--ink-soft);
+    font-family: Georgia, serif;
+    font-style: italic;
+  }
+
+  .card .source {
+    font-size: 12px;
+    color: var(--ink-soft);
+    margin-top: 8px;
+  }
+
+  .card p { margin: 0; font-size: 15.5px; line-height: 1.5; }
+
+  .conflict-label {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--red);
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    margin-bottom: 6px;
+  }
+
+  .error-msg {
+    background: var(--red-bg);
+    color: var(--red);
+    padding: 14px 18px;
+    border-left: 4px solid var(--red);
+  }
+
+  .empty-note {
+    color: var(--ink-soft);
+    font-size: 15px;
+    font-style: italic;
+  }
+</style>
+</head>
+<body>
+  <div class="desk">
+    <header>
+      <p class="kicker">Institute Regulations, Fee Schedule, Hostel Policy</p>
+      <h1>Rulebook Query Desk</h1>
+      <p class="sub">Ask a question about the regulations. Every answer cites the exact clause it came from — and this desk will tell you plainly when the rulebook is silent, or when it contradicts itself.</p>
+    </header>
+
+    <div class="ask-row">
+      <input type="text" id="question" placeholder="e.g. What attendance percentage do I need to sit for exams?" />
+      <button id="askBtn" onclick="askQuestion()">Ask</button>
+    </div>
+    <p class="hint">Press Enter or click Ask. Citations always appear below the answer.</p>
+
+    <div id="results">
+      <p class="empty-note">No question asked yet.</p>
+    </div>
+  </div>
+
+  <script>
+    const API_URL = "http://localhost:8000/ask";
+
+    const questionInput = document.getElementById("question");
+    const askBtn = document.getElementById("askBtn");
+    const resultsEl = document.getElementById("results");
+
+    questionInput.addEventListener("keydown", (e) => {
+      if (e.key === "Enter") askQuestion();
+    });
+
+    function escapeHtml(str) {
+      const div = document.createElement("div");
+      div.textContent = str;
+      return div.innerHTML;
+    }
+
+    function renderCitation(citation, typeClass) {
+      return `
+        <div class="card ${typeClass}">
+          <div class="ref-line">
+            <span class="ref">${escapeHtml(citation.section_reference)}</span>
+            <span class="score">score ${citation.score.toFixed(3)}</span>
+          </div>
+          <p>${escapeHtml(citation.text)}</p>
+          <div class="source">Source: ${escapeHtml(citation.source_file)}</div>
+        </div>
+      `;
+    }
+
+    function renderResult(data) {
+      let html = "";
+
+      if (data.type === "answered") {
+        html += `<span class="verdict-tag verdict-answered">Answered</span>`;
+        html += `<div class="answer-block">${escapeHtml(data.answer)}</div>`;
+        data.citations.forEach(c => html += renderCitation(c, "answered"));
+      } else if (data.type === "conflict") {
+        html += `<span class="verdict-tag verdict-conflict">Conflict detected</span>`;
+        html += `<div class="answer-block">The rulebook contains two sections that disagree on this point.</div>`;
+        html += `<div class="conflict-label">Source A</div>`;
+        html += renderCitation(data.citations[0], "conflict");
+        html += `<div class="conflict-label">Source B</div>`;
+        html += renderCitation(data.citations[1], "conflict");
+      } else {
+        html += `<span class="verdict-tag verdict-not_covered">Not covered</span>`;
+        html += `<div class="answer-block">${escapeHtml(data.answer || "This rulebook does not address this question.")}</div>`;
+        if (data.citations && data.citations.length > 0) {
+          html += `<div class="conflict-label" style="color: var(--amber);">Closest related clause (below confidence threshold)</div>`;
+          html += renderCitation(data.citations[0], "not_covered");
+        }
+      }
+
+      resultsEl.innerHTML = html;
+    }
+
+    async function askQuestion() {
+      const question = questionInput.value.trim();
+      if (!question) return;
+
+      askBtn.disabled = true;
+      askBtn.textContent = "Searching…";
+      resultsEl.innerHTML = `<p class="empty-note">Searching the rulebook…</p>`;
+
+      try {
+        const response = await fetch(API_URL, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ question })
+        });
+
+        if (!response.ok) {
+          throw new Error(`Server responded with status ${response.status}`);
+        }
+
+        const data = await response.json();
+        renderResult(data);
+      } catch (err) {
+        resultsEl.innerHTML = `<div class="error-msg">Couldn't reach the query server. Make sure the FastAPI backend is running at ${API_URL}.<br><br>(${escapeHtml(err.message)})</div>`;
+      } finally {
+        askBtn.disabled = false;
+        askBtn.textContent = "Ask";
+      }
+    }
+  </script>
+</body>
+</html>

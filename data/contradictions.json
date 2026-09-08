@@ -1,0 +1,64 @@
+{
+  "contradictions": [
+    {
+      "id": "C1",
+      "topic": "attendance_threshold",
+      "title": "Minimum attendance percentage for exam eligibility",
+      "source_file": "regulations.md",
+      "clause_a": {
+        "reference": "Clause 2.1",
+        "text": "Every student must maintain a minimum of seventy-five percent (75%) attendance, calculated cumulatively across all courses registered for in a given semester, in order to be eligible to sit for the End-Semester Examination in that semester."
+      },
+      "clause_b": {
+        "reference": "Clause 4.3",
+        "text": "Notwithstanding Clause 2.1, a student who has been granted Medical Leave under Clause 4.1 and whose resulting cumulative attendance, after adjustment under Clause 4.2, is not below sixty-five percent (65%) shall be deemed eligible to appear in the End-Semester Examination for the affected courses."
+      },
+      "nature_of_conflict": "Clause 2.1 sets a blanket 75% attendance floor for exam eligibility with no exceptions stated in that clause. Clause 4.3 explicitly overrides it ('Notwithstanding Clause 2.1') and sets a materially different floor of 65% for medically-exempted students. The two clauses disagree on what the actual minimum threshold is once medical leave is involved, and neither clause cross-references the other's exact wording, so a student reading only one section gets a different answer than a student reading both.",
+      "test_questions": [
+        "What is the minimum attendance percentage required to sit for exams?",
+        "If I have a medical certificate, what attendance percentage do I need to appear in exams?",
+        "Is 70% attendance enough to take my end-semester exam if I was sick?"
+      ]
+    },
+    {
+      "id": "C2",
+      "topic": "late_fee_calculation",
+      "title": "Flat late fee vs. escalating percentage-based late fee",
+      "source_file": "fee_deadlines.md",
+      "clause_a": {
+        "reference": "Clause F.3",
+        "text": "Students who fail to pay the semester fee by the due date specified in Clause F.2 shall be liable to pay a flat late fee of \u20b9500 (Rupees Five Hundred only), irrespective of how many days beyond the due date the payment is made, provided full payment is completed before the start of the End-Semester Examination period."
+      },
+      "clause_b": {
+        "reference": "Clause F.4 (Late Fee Table)",
+        "text": "The table sets escalating late fees as a percentage of outstanding fee based on days elapsed: 1-7 days = 2%, 8-14 days = 5%, 15-21 days = 8%, 22-30 days = 12%, beyond 30 days = 15% + referral to Dean of Student Affairs."
+      },
+      "nature_of_conflict": "Clause F.3 states the late fee is a single flat amount (\u20b9500) regardless of delay length. Clause F.4's table describes a completely different penalty structure - a percentage of the outstanding fee that increases the longer payment is delayed. These are two mutually exclusive fee models for the exact same event (late semester fee payment), and the document gives no indication of which one actually applies or supersedes the other.",
+      "test_questions": [
+        "How much is the late fee if I pay my semester fee 10 days late?",
+        "Is the late payment penalty a fixed amount or does it increase over time?",
+        "What happens if I pay my fees 3 weeks after the due date?"
+      ]
+    },
+    {
+      "id": "C3",
+      "topic": "attendance_waiver_authority",
+      "title": "Who has authority to waive the attendance requirement",
+      "source_file": "regulations.md",
+      "clause_a": {
+        "reference": "Clause 5.2",
+        "text": "The Committee is empowered to review individual cases of attendance shortfall not otherwise resolved under Sections 2 or 4, and may, at its discretion, grant a waiver permitting a student to appear in the End-Semester Examination notwithstanding a shortfall, where the Committee is satisfied that extraordinary and documented circumstances prevented attendance."
+      },
+      "clause_b": {
+        "reference": "Clause 8.4",
+        "text": "Any waiver of the minimum attendance requirement prescribed under Clause 2.1, in cases connected to or arising from disciplinary proceedings \u2014 including suspension periods later overturned on appeal \u2014 falls under the exclusive authority of the Vice-Chancellor, and no other office, committee, or individual may grant such a waiver in these circumstances."
+      },
+      "nature_of_conflict": "Clause 5.2 grants the Examination Eligibility Committee general discretionary power to waive attendance shortfalls for extraordinary circumstances. Clause 8.4 states that attendance waivers connected to disciplinary matters fall under the EXCLUSIVE authority of the Vice-Chancellor, with explicit language that 'no other office, committee, or individual may grant such a waiver.' The two clauses conflict on authority whenever a student's attendance shortfall is even partly connected to a disciplinary proceeding (e.g., a suspension) - it is unclear whether the Committee or the Vice-Chancellor is the correct approving body, and the regulations do not clearly delineate the boundary between 'general' shortfall (Committee) and 'disciplinary-connected' shortfall (VC only).",
+      "test_questions": [
+        "Who can approve a waiver for my attendance shortfall?",
+        "Can the Examination Eligibility Committee waive my attendance requirement if my shortfall is linked to a suspension?",
+        "Does the Vice-Chancellor or the Committee decide attendance waiver appeals?"
+      ]
+    }
+  ]
+}
