@@ -101,7 +101,7 @@ response passes a guardrail check that verifies it doesn't reference any clause 
 its input; if it fails, the raw extractive chunk text is shown instead, and the response is
 marked `"generation_method": "extractive_fallback"` so you can measure how often this happens.
 
-## Design notes (for the interview)
+## Design notes 
 
 - **Chunking by clause, not fixed token windows** — a clause is never split mid-sentence, since
   that would break both citation accuracy and conflict detection (a clause's contradiction with
